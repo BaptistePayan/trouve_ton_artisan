@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/BaptistePayan/trouve_ton_artisan#readme",
   "dependencies": {
+    "bootstrap": "^5.3.6",
     "cors": "^2.8.5",
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
+    "react-bootstrap": "^2.10.10",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {
