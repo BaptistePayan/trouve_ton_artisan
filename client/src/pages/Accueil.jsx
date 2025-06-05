@@ -21,7 +21,7 @@ function Accueil() {
     {/* Haut de page */}
       <div>
     {/* Header principal */}
-    <header className="bg-white py-4 px-3">
+    <header className="bg-white py-1 px-3">
       <div className="container-fluid">
         <div className="row align-items-center">
           {/* Logo à gauche */}
@@ -110,7 +110,7 @@ function Accueil() {
         borderBottomLeftRadius: "60px",
         borderBottomRightRadius: "60px",
         padding: "60px 0 80px 0",
-        marginBottom: "40px",
+        marginBottom: "60px",
       }}
     >
       <div className="container">
@@ -194,62 +194,164 @@ function Accueil() {
       </div>
     </div>
   </div>
-;
-  
- 
+  {/*body*/}
+<section
+    style={{
+      background: "#fff",
+      borderRadius: "60px",
+      marginTop: "-140px",   // Superpose sur le header
+      marginBottom: "-40px",// Superpose sur le footer
+      boxShadow: "0 8px 32px rgba(0,0,0,0.06)",
+      zIndex: 2,
+      position: "relative",
+      padding: "48px 0 56px 0",
+    }}
+    className="container"
+  >
+    {/* Titre */}
+    <div className="mb-5">
+      <div
+        style={{
+          borderLeft: "6px solid #1886e7",
+          paddingLeft: 12,
+          fontWeight: 700,
+          fontSize: "1.5rem",
+          marginBottom: 8,
+          color: "#00497c",
+        }}
+      >
+        Artisans du mois
+      </div>
+    </div>
 
-      
-      
-      <section>
-       <Row className="justify-content-center my-4">
-  {artisans.map((artisan, idx) => (
-    <Col key={artisan.id} md={4} className="d-flex">
-      <Card className="mb-4 flex-fill shadow-sm" style={{ background: "#f7fafd", borderRadius: "16px" }}>
-        <Card.Body>
-          <Card.Title className="mb-2">{artisan.nom}</Card.Title>
-          <div className="mb-2">
-            <span style={{ fontWeight: "bold" }}>{artisan.note}</span>
-            <span className="ms-2" style={{ color: "#1886e7" }}>
-              {"★".repeat(Math.round(artisan.note))}
-              <span style={{ color: "#ccc" }}>
-                {"★".repeat(5 - Math.round(artisan.note))}
-              </span>
+    {/* Cartes artisans */}
+    <Row className="justify-content-center my-4">
+      {artisans.map((artisan) => (
+        <Col key={artisan.id} md={4} className="d-flex">
+          <Card
+            className="mb-4 flex-fill shadow-sm"
+            style={{
+              background: "#f7fafd",
+              borderRadius: "16px",
+              border: "none",
+              minWidth: 0,
+            }}
+          >
+            <Card.Body>
+              <Card.Title className="mb-2">{artisan.nom}</Card.Title>
+              <div className="mb-2">
+                <span style={{ fontWeight: "bold" }}>{artisan.note}</span>
+                <span className="ms-2" style={{ color: "#1886e7" }}>
+                  {"★".repeat(Math.round(artisan.note))}
+                </span>
+                <span style={{ color: "#ccc" }}>
+                  {"★".repeat(5 - Math.round(artisan.note))}
+                </span>
+              </div>
+              <Card.Text className="mb-1">{artisan.specialite}</Card.Text>
+              <Card.Text className="text-muted">{artisan.ville}</Card.Text>
+            </Card.Body>
+            <Card.Footer className="bg-transparent border-0 text-end">
+              <Button
+                variant="link"
+                style={{
+                  color: "#1886e7",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                <span className="fw-bold">&rarr;</span>
+              </Button>
+            </Card.Footer>
+          </Card>
+        </Col>
+      ))}
+    </Row>
+
+    {/* Bouton central */}
+    <div className="text-center">
+      <Button variant="primary" className="mt-2">
+        Tous les artisans
+      </Button>
+    </div>
+  
+  </section>
+
+      <footer
+    style={{
+      background: "#0074c7",
+      color: "#fff",
+      padding: "48px 0 0 0",
+      borderBottomLeftRadius: "0",
+      borderBottomRightRadius: "0",
+    }}
+  >
+    <div className="container">
+      <div className="row align-items-start mb-4">
+        {/* Bloc titre à gauche */}
+       <div className="col-md-6 text-center text-md-start mb-4 mb-md-0">
+          <h2 className="fw-bold" style={{ fontSize: "2.2rem" }}>
+            Trouve ton artisan&nbsp;!
+          </h2>
+          <div style={{ fontSize: "1.1rem", color: "#bde5ff", fontWeight: 600 }}>
+            Avec la région <br />
+            <span style={{ color: "#fff", fontWeight: 700 }}>
+              Auvergne-Rhône-Alpes
             </span>
           </div>
-          <Card.Text className="mb-1">{artisan.specialite}</Card.Text>
-          <Card.Text className="text-muted">{artisan.ville}</Card.Text>
-        </Card.Body>
-        <Card.Footer className="bg-transparent border-0 text-end">
-          <Button variant="link" style={{ color: "#1886e7", textDecoration: "none" }}>
-            <span className="fw-bold">→</span>
-          </Button>
-        </Card.Footer>
-      </Card>
-    </Col>
-  ))}
-</Row>
-<Button variant="primary" className="mt-2">Tous les artisans</Button>
-
-      </section>
-
-      <footer style={{background: '#1886e7', color: 'white', padding: '2rem', marginTop: '2rem'}}>
-        <h2>Trouve ton artisan !</h2>
-        <address>
-          Lyon<br/>
-          101 cours Charlemagne<br/>
-          CS 20033<br/>
-          69286 LYON CEDEX 02<br/>
-          France<br/>
-          +33 (0)4 26 73 40 00
-        </address>
-        <div>
-          <a href="#">Mentions légales</a> | <a href="#">Données personnelles</a> | ...
         </div>
-      </footer>
+          
+        {/* Bloc adresse à droite */}
+        <div className="col-md-6 text-center text-md-center">
+          <div className="fw-bold mb-2" style={{ fontSize: "1.1rem" }}>Lyon</div>
+          <div>
+            101 cours Charlemagne<br />
+            CS 20033<br />
+            69269 LYON CEDEX 02<br />
+            France<br />
+            +33 (0)4 26 73 40 00
+          </div>
+        </div>
+      </div>
+
+      {/* Ligne séparatrice */}
+      <hr style={{ borderTop: "1px solid #bde5ff", opacity: 0.3 }} />
+
+      {/* Liens du footer */}
+      <div className="row">
+        <div className="col-12">
+          <ul className="nav justify-content-center flex-wrap" style={{ fontSize: "1rem" }}>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Mentions légales</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Données personnelles</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Données Accessibilité : partiellement conforme</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Presse</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Marchés publics</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Venir à la Région</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Contacts</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link px-2 text-white-50" href="#">Politique des cookies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div style={{ height: 32 }} /> {/* Pour l'espace en bas */}
+    </div>
+  </footer>
     </div>
   );
-  
 }
-
-
 export default Accueil;
