@@ -20,16 +20,19 @@ function Accueil() {
     <div>
     {/* Haut de page */}
       <div>
-    {/* Header principal */}
-    <header className="bg-white py-1 px-3">
+    {/* Header principal responsive */}
+    <header className="bg-white py-2 py-md-4 px-3 border-bottom">
       <div className="container-fluid">
-        <div className="row align-items-center">
-          {/* Logo à gauche */}
-          <div className="col-2 d-flex align-items-center">
+       <div className="d-flex align-items-center justify-content-between">
+        {/*<div className="row align-items-center">*/}
+          {/* Logo à gauche responsive */}
+          <div className="d-flex align-items-center flex-grow-1">
+          {/*<div className="col-6 col-md-2 d-flex align-items-center">*/}
             <img
               src="/img/logo.png"
               alt="Logo"
-              style={{ height: 96 }}
+              style={{ height: "48px", maxWidth: "100%", objectFit: "contain" }}
+              className="img-fluid"
             />
           </div>
           {/* Titre centré */}
@@ -82,7 +85,7 @@ function Accueil() {
             </form>
             {/* Menu horizontal */}
             <nav className="container-fluid">
-    <ul className="nav">
+   {/* <ul className="nav">
       <li className="nav-item">
         <a className="nav-link text-secondary" href="#">Bâtiment</a>
       </li>
@@ -95,7 +98,16 @@ function Accueil() {
       <li className="nav-item">
         <a className="nav-link text-secondary" href="#">Alimentation</a>
       </li>
-    </ul>
+    </ul>*/}
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul className="navbar-nav ms-auto">
+              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Acceuil</Link> </li>
+              <li className="nav-item mx-0 mx-lg-1"> <Link to="#"className="nav-link active py-3 px-0 px-lg-3 rounded" >Services</Link></li>
+              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Portfolio</Link></li>
+              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Contact</Link></li>
+              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Mentions Légales</Link></li>
+              </ul>
+        </div>
   </nav>
           </div>
         </div>
@@ -107,10 +119,8 @@ function Accueil() {
       style={{
         background: "#00497c",
         color: "#fff",
-        borderBottomLeftRadius: "60px",
-        borderBottomRightRadius: "60px",
         padding: "60px 0 80px 0",
-        marginBottom: "60px",
+        marginBottom: "80px",
       }}
     >
       <div className="container">
