@@ -23,6 +23,7 @@
     "express": "^5.1.0",
     "mysql2": "^3.14.1",
     "react-bootstrap": "^2.10.10",
+    "react-router-dom": "^7.6.2",
     "sequelize": "^6.37.7"
   },
   "devDependencies": {

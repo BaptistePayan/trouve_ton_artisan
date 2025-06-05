@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 
 
-function Fiche() {
+function Services() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
@@ -21,6 +21,6 @@ return(<div>caca</div>
 )
 
 
-}
 
-export default Fiche;
+}
+export default Services;

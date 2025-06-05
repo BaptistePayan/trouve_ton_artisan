@@ -7,8 +7,7 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 
-
-function Fiche() {
+function Batiment() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
@@ -16,11 +15,9 @@ function Fiche() {
       .then(res => setArtisans(res.data))
       .catch(err => console.error(err));
   }, []);
+
 return(<div>caca</div>
 
 )
-
-
 }
-
-export default Fiche;
+export default Batiment;

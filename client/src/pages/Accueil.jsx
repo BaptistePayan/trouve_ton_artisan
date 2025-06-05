@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
 
 function Accueil() {
@@ -28,12 +29,12 @@ function Accueil() {
           {/* Logo à gauche responsive */}
           <div className="d-flex align-items-center flex-grow-1">
           {/*<div className="col-6 col-md-2 d-flex align-items-center">*/}
-            <img
+          <Link className="navbar-brand" to="/"><img
               src="/img/logo.png"
               alt="Logo"
               style={{ height: "48px", maxWidth: "100%", objectFit: "contain" }}
               className="img-fluid"
-            />
+            /></Link>
           </div>
           {/* Titre centré */}
           <div className="col-8 text-center">
@@ -84,31 +85,43 @@ function Accueil() {
               </div>
             </form>
             {/* Menu horizontal */}
-            <nav className="container-fluid">
-   {/* <ul className="nav">
-      <li className="nav-item">
-        <a className="nav-link text-secondary" href="#">Bâtiment</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link text-secondary" href="#">Services</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link text-secondary" href="#">Fabrication</a>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link text-secondary" href="#">Alimentation</a>
-      </li>
-    </ul>*/}
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    
+  <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">Accueil</Link>
+
+        {/* Bouton burger */}
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        {/* Liens du menu */}
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Acceuil</Link> </li>
-              <li className="nav-item mx-0 mx-lg-1"> <Link to="#"className="nav-link active py-3 px-0 px-lg-3 rounded" >Services</Link></li>
-              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Portfolio</Link></li>
-              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Contact</Link></li>
-              <li className="nav-item mx-0 mx-lg-1"> <Link to="#" className="nav-link active py-3 px-0 px-lg-3 rounded">Mentions Légales</Link></li>
-              </ul>
+            <li className="nav-item">
+              <Link to="/Batiment" className="nav-link">Bâtiment</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Services" className="nav-link">Services</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Fabrication" className="nav-link">Fabrication</Link>
+            </li>
+            <li className="nav-item">
+              <Link to="/Alimentation" className="nav-link">Alimentation</Link>
+            </li>
+          </ul>
         </div>
-  </nav>
+      </div>
+    </nav>
           </div>
         </div>
       </div>
