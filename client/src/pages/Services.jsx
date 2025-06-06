@@ -81,9 +81,11 @@ return(
 
     {/* Bouton central */}
     <div className="text-center">
+      <Link to="/Liste" className="nav-link">
       <Button variant="primary" className="mt-2">
         Tous les artisans
       </Button>
+      </Link>
     </div>
     <Foot />
 </div>

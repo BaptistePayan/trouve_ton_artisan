@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import Head from '../components/Head.jsx';
 import Foot from "../components/Foot.jsx";
+import Filtre from "../components/Filtre.jsx";
 
 
 function Liste() {
@@ -21,6 +22,7 @@ function Liste() {
 return(
 <div> 
  <Head />
+ <Filtre />
 </div>
 
 )
