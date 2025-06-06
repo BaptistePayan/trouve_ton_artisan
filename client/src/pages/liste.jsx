@@ -52,7 +52,7 @@ const Liste = () => {
         </Card.Body>
        <Card.Footer className="bg-transparent border-0 text-end">
   <Link 
-    to={`/entreprise/${entreprises.id}`}
+    to={`/entreprise/${entreprise.id}`}
     style={{
       color: "#0074c7",
       textDecoration: "none",
