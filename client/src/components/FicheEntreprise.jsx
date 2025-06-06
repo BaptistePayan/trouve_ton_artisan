@@ -112,6 +112,8 @@ export default function FicheEntreprise() {
           )}
         </div>
       </div>
+
     </div>
+    
   );
 }

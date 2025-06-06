@@ -66,7 +66,7 @@ const Liste = () => {
     </Col>
   ))}
 </Row>
-
+<Foot />
 </div>
 )}
 

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Foot () {
     return(
 
@@ -42,32 +44,49 @@ function Foot () {
       <hr style={{ borderTop: "1px solid #bde5ff", opacity: 0.3 }} />
 
       {/* Liens du footer */}
+  {/* Liens du footer */}
       <div className="row">
         <div className="col-12">
           <ul className="nav justify-content-center flex-wrap" style={{ fontSize: "1rem" }}>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Mentions légales</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Données personnelles</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Données Accessibilité : partiellement conforme</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Presse</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Marchés publics</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Venir à la Région</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Contacts</a>
+              </Link>
             </li>
             <li className="nav-item">
+              <Link to="/Warning" className="nav-link">
               <a className="nav-link px-2 text-white-50" href="#">Politique des cookies</a>
+              </Link>
             </li>
           </ul>
         </div>
