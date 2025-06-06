@@ -2,7 +2,10 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const entreprisesRouter = require('./routes/entreprises');
 
+
+app.use('/api/entreprises', entreprisesRouter);
 
 app.use(cors());
 app.use(express.json());
@@ -88,7 +91,17 @@ app.get('/api/entreprises/Fabrication', (req, res) => {
   .catch(err => res.status(500).json({ error: err.message }));
 });
 
-
-
+app.get('/api/entreprises', (req, res) => {
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, s.nom AS specialite, v.nom AS ville
+     FROM entreprises e
+     JOIN specialites s ON e.specialite_id = s.id
+     JOIN villes v ON e.ville_id = v.id
+     ORDER BY e.id ASC;`,
+    { type: db.Sequelize.QueryTypes.SELECT }
+  )
+  .then(results => res.json(results))
+  .catch(err => res.status(500).json({ error: err.message }));
+});
 
 

@@ -276,16 +276,16 @@ function Accueil() {
               <Card.Text className="text-muted">{artisan.ville}</Card.Text>
             </Card.Body>
             <Card.Footer className="bg-transparent border-0 text-end">
-              <Button 
-                variant="link"
-                style={{
-                  color: "#1886e7",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                <span className="fw-bold">&rarr;</span>
-              </Button>
+              <Link 
+                  to={`/entreprise/${artisan.id}`}
+                  style={{
+                    color: "#0074c7",
+                    textDecoration: "none",
+                    fontWeight: "bold",
+                  }}
+                >
+                  <span className="fw-bold">&rarr;</span>
+                </Link>
             </Card.Footer>
           </Card>
         </Col>
