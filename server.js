@@ -40,6 +40,54 @@ app.get('/api/artisans-du-mois', (req, res) => {
   .catch(err => res.status(500).json({ error: err.message }));
 });
 
+// Route pour récupérer les entreprises de la catégorie Alimentation
+app.get('/api/entreprises/alimentation', (req, res) => {
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, e.a_propos, e.site_web, e.email
+     FROM entreprises e
+     WHERE e.categorie_id = 1`,
+    { type: db.Sequelize.QueryTypes.SELECT }
+  )
+  .then(results => res.json(results))
+  .catch(err => res.status(500).json({ error: err.message }));
+});
+
+// Route pour récupérer les entreprises de la catégorie Batiment
+app.get('/api/entreprises/Batiment', (req, res) => {
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, e.a_propos, e.site_web, e.email
+     FROM entreprises e
+     WHERE e.categorie_id = 2`,
+    { type: db.Sequelize.QueryTypes.SELECT }
+  )
+  .then(results => res.json(results))
+  .catch(err => res.status(500).json({ error: err.message }));
+});
+
+// Route pour récupérer les entreprises de la catégorie Services
+app.get('/api/entreprises/Services', (req, res) => {
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, e.a_propos, e.site_web, e.email
+     FROM entreprises e
+     WHERE e.categorie_id = 4`,
+    { type: db.Sequelize.QueryTypes.SELECT }
+  )
+  .then(results => res.json(results))
+  .catch(err => res.status(500).json({ error: err.message }));
+});
+
+// Route pour récupérer les entreprises de la catégorie Fabrication
+app.get('/api/entreprises/Fabrication', (req, res) => {
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, e.a_propos, e.site_web, e.email
+     FROM entreprises e
+     WHERE e.categorie_id = 3`,
+    { type: db.Sequelize.QueryTypes.SELECT }
+  )
+  .then(results => res.json(results))
+  .catch(err => res.status(500).json({ error: err.message }));
+});
+
 
 
 

@@ -6,6 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
+import Head from '../components/Head.jsx';
 
 
 function Accueil() {
@@ -275,7 +276,7 @@ function Accueil() {
               <Card.Text className="text-muted">{artisan.ville}</Card.Text>
             </Card.Body>
             <Card.Footer className="bg-transparent border-0 text-end">
-              <Button
+              <Button 
                 variant="link"
                 style={{
                   color: "#1886e7",
@@ -293,9 +294,11 @@ function Accueil() {
 
     {/* Bouton central */}
     <div className="text-center">
+      <Link to="/Liste" className="nav-link">
       <Button variant="primary" className="mt-2">
-        Tous les artisans
-      </Button>
+        Tous les Artisans
+        </Button>
+      </Link>
     </div>
   
   </section>
