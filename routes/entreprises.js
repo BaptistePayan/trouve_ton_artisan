@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const db = require("../app/models");
 
-
+//routes et requel sql pour catégorie Alimentation
 router.get('/Alimentation', async (req, res) => {
   console.log('Route /Alimentation appelée !');
   try {
@@ -17,7 +17,7 @@ router.get('/Alimentation', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+//routes et requel sql pour catégorie Batiment
 router.get('/Batiment', async (req, res) => {
   console.log('Route /Batiment appelée !');
   try {
@@ -32,7 +32,7 @@ router.get('/Batiment', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+//routes et requel sql pour catégorie Fabrication
 router.get('/Fabrication', async (req, res) => {
   console.log('Route /Fabrication appelée !');
   try {
@@ -47,7 +47,7 @@ router.get('/Fabrication', async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
-
+//routes et requel sql pour catégorie Services
 router.get('/Services', async (req, res) => {
   console.log('Route /Services appelée !');
   try {
@@ -64,7 +64,7 @@ router.get('/Services', async (req, res) => {
 });
 
 
-// Exemple de route GET pour récupérer une entreprise par ID
+// de route GET pour récupérer une entreprise par ID (dynamique)
 router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params;
