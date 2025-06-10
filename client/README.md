@@ -15,6 +15,8 @@ Plateforme web responsive permettant de trouver des artisans par localité et sp
 - Node.js 
 - MySQL 
 - npm 
+- React
+- Bootstrap
 
 
 

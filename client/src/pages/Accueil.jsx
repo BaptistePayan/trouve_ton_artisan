@@ -24,7 +24,7 @@ function Accueil() {
 <div>
 <Head />
 <div>
-{/* Bandeau bleu */}
+    {/* Bandeau bleu */}
     <div
       style={{
         background: "#00497c",
