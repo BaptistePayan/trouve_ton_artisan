@@ -3,7 +3,6 @@ const router = express.Router();
 const db = require("../app/models");
 
 
-
 router.get('/Alimentation', async (req, res) => {
   console.log('Route /Alimentation appelée !');
   try {

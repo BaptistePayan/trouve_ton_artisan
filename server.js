@@ -27,6 +27,35 @@ db.sequelize.sync().then(() => {
 });
 });
 
+app.get('/api/search', (req, res) => {
+  const searchTerm = req.query.q || '';
+  
+  if (searchTerm.length < 2) {
+    return res.json([]);
+  }
+
+  db.sequelize.query(
+    `SELECT e.id, e.nom, e.note, s.nom AS specialite, v.nom AS ville 
+     FROM entreprises e 
+     JOIN specialites s ON e.specialite_id = s.id 
+     JOIN villes v ON e.ville_id = v.id 
+     WHERE e.nom LIKE :search 
+        OR s.nom LIKE :search 
+        OR v.nom LIKE :search 
+     ORDER BY e.note DESC 
+     LIMIT 10`,
+    {
+      replacements: { search: `%${searchTerm}%` },
+      type: db.sequelize.QueryTypes.SELECT
+    }
+  )
+  .then(results => res.json(results))
+  .catch(err => {
+    console.error('Erreur de recherche:', err);
+    res.status(500).json({ error: 'Erreur lors de la recherche' });
+  });
+});
+
 //récupere les donnée avec la methode sequelize et requete sql
 app.get('/api/artisans-du-mois', (req, res) => {
   db.sequelize.query(
