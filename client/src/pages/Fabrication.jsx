@@ -12,11 +12,11 @@ import Foot from "../components/Foot.jsx";
 
 
 function Fabrication() {
-  const [artisans, setArtisans] = useState([]);
+  const [entreprises, setEntreprises] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:8000/api/entreprises/Fabrication')
-      .then(res => setArtisans(res.data))
+      .then(res => setEntreprises(res.data))
       .catch(err => console.error(err));
   }, []);
 return(
@@ -39,8 +39,8 @@ return(
 
     {/* Cartes artisans */}
     <Row className="justify-content-center my-4">
-      {artisans.map((artisan) => (
-        <Col key={artisan.id} md={4} className="d-flex">
+      {entreprises.map((entreprise) => (
+        <Col key={entreprise.id} md={4} className="d-flex">
           <Card
             className="mb-4 flex-fill shadow-sm"
             style={{
@@ -51,18 +51,18 @@ return(
             }}
           >
             <Card.Body>
-              <Card.Title className="mb-2">{artisan.nom}</Card.Title>
+              <Card.Title className="mb-2">{entreprise.nom}</Card.Title>
               <div className="mb-2">
-                <span style={{ fontWeight: "bold" }}>{artisan.note}</span>
+                <span style={{ fontWeight: "bold" }}>{entreprise.note}</span>
                 <span className="ms-2" style={{ color: "#1886e7" }}>
-                  {"★".repeat(Math.round(artisan.note))}
+                  {"★".repeat(Math.round(entreprise.note))}
                 </span>
                 <span style={{ color: "#ccc" }}>
-                  {"★".repeat(5 - Math.round(artisan.note))}
+                  {"★".repeat(5 - Math.round(entreprise.note))}
                 </span>
               </div>
-              <Card.Text className="mb-1">{artisan.specialite}</Card.Text>
-              <Card.Text className="text-muted">{artisan.ville}</Card.Text>
+              <Card.Text className="mb-1">{entreprise.specialite}</Card.Text>
+              <Card.Text className="text-muted">{entreprise.ville}</Card.Text>
             </Card.Body>
             <Card.Footer className="bg-transparent border-0 text-end">
              <Link 

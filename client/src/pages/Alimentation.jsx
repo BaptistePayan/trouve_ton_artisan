@@ -7,7 +7,7 @@ import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 import Head from '../components/Head.jsx';
-import Foot from "../components/Foot.jsx";
+import Foot from '../components/Foot.jsx';
 
 function Alimentation() {
   const [entreprises, setEntreprises] = useState([]);
@@ -81,9 +81,11 @@ return(
 
     {/* Bouton central */}
     <div className="text-center">
+      <Link to="/Liste" className="nav-link">
       <Button variant="primary" className="mt-2">
         Tous les artisans
       </Button>
+      </Link>
     </div>
     <Foot />
 </div>
