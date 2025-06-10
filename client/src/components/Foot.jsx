@@ -44,7 +44,6 @@ function Foot () {
       <hr style={{ borderTop: "1px solid #bde5ff", opacity: 0.3 }} />
 
       {/* Liens du footer */}
-  {/* Liens du footer */}
       <div className="row">
         <div className="col-12">
           <ul className="nav justify-content-center flex-wrap" style={{ fontSize: "1rem" }}>
