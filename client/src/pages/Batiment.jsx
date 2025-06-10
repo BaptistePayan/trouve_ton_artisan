@@ -13,7 +13,7 @@ function Batiment() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
-    axios.get('/api/entreprises/Batiment')
+    axios.get('http://localhost:8000/api/entreprises/Batiment')
       .then(res => setArtisans(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -64,16 +64,17 @@ return(
               <Card.Text className="text-muted">{artisan.ville}</Card.Text>
             </Card.Body>
             <Card.Footer className="bg-transparent border-0 text-end">
-              <Button
-                variant="link"
-                style={{
-                  color: "#1886e7",
-                  textDecoration: "none",
-                  fontWeight: "bold",
-                }}
-              >
-                <span className="fw-bold">&rarr;</span>
-              </Button>
+          <Link 
+                            to={`/entreprise/${entreprise.id}`}
+                            style={{
+                              color: "#0074c7",
+                              textDecoration: "none",
+                              fontWeight: "bold",
+                            }}
+                          >
+                            <span className="fw-bold">&rarr;</span>
+          </Link>
+                              
             </Card.Footer>
           </Card>
         </Col>

@@ -14,7 +14,6 @@ const Liste = () => {
   const [entreprises, setEntreprises] = useState([]);
 
   useEffect(() => {
-    // Remplace l'URL par celle de ton API backend
     axios.get('http://localhost:8000/api/entreprises')
       .then(res => setEntreprises(res.data))
       .catch(err => console.error(err));
