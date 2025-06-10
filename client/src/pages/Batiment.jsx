@@ -35,7 +35,6 @@ return(
         Artisans du mois
       </div>
     </div>
-
     {/* Cartes artisans */}
     <Row className="justify-content-center my-4">
       {entreprises.map((entreprise) => (
@@ -95,3 +94,7 @@ return(
 )
 }
 export default Batiment;
+
+
+
+           
