@@ -13,7 +13,7 @@ function Alimentation() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/entreprises/alimentation') 
+    axios.get('http://localhost:8000/api/entreprises/Alimentation') 
       .then(res => setArtisans(res.data))
       .catch(err => console.error(err));
   }, []);
@@ -90,14 +90,6 @@ return(
 
 
 )
-
-
-
-
-
-
-
-
 }
 
 export default Alimentation;

@@ -2,6 +2,69 @@ const express = require('express');
 const router = express.Router();
 const db = require("../app/models");
 
+
+
+router.get('/Alimentation', async (req, res) => {
+  console.log('Route /Alimentation appelée !');
+  try {
+    const results = await db.sequelize.query(
+      'SELECT * FROM entreprises WHERE categorie_id = 1',
+      { type: db.Sequelize.QueryTypes.SELECT }
+    );
+    console.log('Résultats :', results);
+    res.json(results);
+  } catch (err) {
+    console.error('Erreur :', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/Batiment', async (req, res) => {
+  console.log('Route /Batiment appelée !');
+  try {
+    const results = await db.sequelize.query(
+      'SELECT * FROM entreprises WHERE categorie_id = 2',
+      { type: db.Sequelize.QueryTypes.SELECT }
+    );
+    console.log('Résultats :', results);
+    res.json(results);
+  } catch (err) {
+    console.error('Erreur :', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/Fabrication', async (req, res) => {
+  console.log('Route /Fabrication appelée !');
+  try {
+    const results = await db.sequelize.query(
+      'SELECT * FROM entreprises WHERE categorie_id = 3',
+      { type: db.Sequelize.QueryTypes.SELECT }
+    );
+    console.log('Résultats :', results);
+    res.json(results);
+  } catch (err) {
+    console.error('Erreur :', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+router.get('/Services', async (req, res) => {
+  console.log('Route /Services appelée !');
+  try {
+    const results = await db.sequelize.query(
+      'SELECT * FROM entreprises WHERE categorie_id = 4',
+      { type: db.Sequelize.QueryTypes.SELECT }
+    );
+    console.log('Résultats :', results);
+    res.json(results);
+  } catch (err) {
+    console.error('Erreur :', err);
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // Exemple de route GET pour récupérer une entreprise par ID
 router.get('/:id', async (req, res) => {
   try {
@@ -30,5 +93,7 @@ router.get('/:id', async (req, res) => {
     res.status(500).json({ error: 'Erreur serveur' });
   }
 });
+
+
 
 module.exports = router;

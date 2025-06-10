@@ -13,7 +13,7 @@ function Batiment() {
   const [artisans, setArtisans] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:8000/api/entreprises/Batiment')
+    axios.get('/api/entreprises/Batiment')
       .then(res => setArtisans(res.data))
       .catch(err => console.error(err));
   }, []);

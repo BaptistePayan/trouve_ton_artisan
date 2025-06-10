@@ -6,7 +6,7 @@ import Fabrication from "./pages/Fabrication";
 import Accueil from "./pages/Accueil";
 import Error from "./pages/Error";
 import Liste from "./pages/Liste";
-import Menu from "./components/Menu";
+
 import Warning from './components/Warning.jsx'
 import Fiche from './pages/Fiche';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return(
   <Router>
-      <Menu />
+      
       <Routes>
         <Route path="/" element={<Accueil />} />
         <Route path="/Services" element={<Services />} />

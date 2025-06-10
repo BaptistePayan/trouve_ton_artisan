@@ -2,10 +2,10 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const entreprisesRouter = require('./routes/entreprises');
 
-
-app.use('/api/entreprises', entreprisesRouter);
+const entreprisesRoutes = require('./routes/entreprises');
+app.use('/api/entreprises', entreprisesRoutes);
+console.log('Fichier entreprises.js chargé:', entreprisesRoutes);
 
 app.use(cors());
 app.use(express.json());
@@ -43,8 +43,8 @@ app.get('/api/artisans-du-mois', (req, res) => {
   .catch(err => res.status(500).json({ error: err.message }));
 });
 
-// Route pour récupérer les entreprises de la catégorie Alimentation
-app.get('/api/entreprises/alimentation', (req, res) => {
+/* Route pour récupérer les entreprises de la catégorie Alimentation
+app.get('/api/entreprises/Alimentation', (req, res) => {
   db.sequelize.query(
     `SELECT e.id, e.nom, e.note, e.a_propos, e.site_web, e.email
      FROM entreprises e
@@ -53,7 +53,23 @@ app.get('/api/entreprises/alimentation', (req, res) => {
   )
   .then(results => res.json(results))
   .catch(err => res.status(500).json({ error: err.message }));
-});
+});*/
+
+/*app.get('/api/entreprises/Alimentation', async (req, res) => {
+  console.log('Route directe appelée !');
+  try {
+    const results = await db.sequelize.query(
+      'SELECT * FROM entreprises WHERE categorie_id = 1',
+      { type: db.Sequelize.QueryTypes.SELECT }
+    );
+    console.log('Résultats:', results);
+    res.json(results);
+  } catch (err) {
+    console.error('Erreur:', err);
+    res.status(500).json({ error: err.message });
+  }
+});*/
+
 
 // Route pour récupérer les entreprises de la catégorie Batiment
 app.get('/api/entreprises/Batiment', (req, res) => {
@@ -102,6 +118,6 @@ app.get('/api/entreprises', (req, res) => {
   )
   .then(results => res.json(results))
   .catch(err => res.status(500).json({ error: err.message }));
-});
+})
 
 
