@@ -1,4 +1,4 @@
-/*module.exports = {
+module.exports = {
   HOST: "localhost",
   USER: "root",
   PASSWORD: "",
@@ -11,9 +11,9 @@
     acquire: 30000,
     idle: 10000
   }
-};*/
+};
 
-module.exports = {
+/*module.exports = {
   HOST: process.env.DB_HOST,
   USER: process.env.DB_USER,
   PASSWORD: process.env.DB_PASSWORD,
@@ -26,5 +26,5 @@ module.exports = {
     acquire: 30000,
     idle: 10000
   }
-};
+};*/
 
